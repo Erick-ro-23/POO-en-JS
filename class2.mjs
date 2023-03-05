@@ -1,3 +1,32 @@
+function videoPlay(id) {
+    const urlSecreta = "https://platziultrasecretomasquelanasa.com/" + id;
+    console.log("Se esta produciendo desde la url " + urlSecreta);
+}
+function videoStop(id) {
+    const urlSecreta = "https://platziultrasecretomasquelanasa.com/" + id;
+    console.log("Pausamos la url " + urlSecreta);
+}
+
+export class PlatziClass {
+    constructor(name, videoID,) {
+        this.name = name;
+        this.videoID = videoID;
+    }
+
+    reproducir() {
+        videoPlay(this.videoID);
+    }
+    pausar() {
+        videoStop(this.videoID);
+    }
+}
+
+
+
+
+
+
+
 class Course {
     constructor({ name, classes = [], comments = [] }) {
         this._name = name;
@@ -47,18 +76,18 @@ class LearningPaths {
 const escualaWeb = new LearningPaths({
     nameAcademy: "Escuala de Desarrolo Web",
     numberHours: 120,
-    nameCourses: [curosProgBasica, curosDefinitivoHTML, curosPracticoHTML,],
+    nameCourses: [cursoProgBasica, cursoDefinitivoHTML, cursoPracticoHTML,],
 });
 const escualaData = new LearningPaths({
     nameAcademy: "Escuala de Data Science",
     numberHours: 180,
-    nameCourses: [curosProgBasica, "Curso de Introducción a la Base de Datos",
+    nameCourses: [cursoProgBasica, "Curso de Introducción a la Base de Datos",
         "Curso de Vualizacion estadística de Datos", "Curso de Interpretación de datos con Python"],
 });
 const escualaVgs = new LearningPaths({
     nameAcademy: "Escuala de Videojuegos",
     numberHours: 155,
-    nameCourses: [curosProgBasica, "Curso de Introducción a la Producción de Vgs",
+    nameCourses: [cursoProgBasica, "Curso de Introducción a la Producción de Vgs",
         "Curso de Unreal Engine", "Curso de Unioty 3D"],
 });
 

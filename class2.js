@@ -1,20 +1,33 @@
 class Course {
     constructor({ name, classes = [], comments = [] }) {
-        this.name = name;
+        this._name = name;
         this.classes = classes;
         this.comments = comments;
     }
+
+    get name() {
+        return this._name;
+    }
+
+    set name(nuevoNombre) {
+        if (nuevoNombre === "Curso Malo") {
+            console.error("Noooo WEb");
+        } else {
+            this._name = nuevoNombre;
+        }
+    }
+
 }
 
-const curosProgBasica = new Course({
+const cursoProgBasica = new Course({
     name: 'Curso Gratis de Programación Básica',
 
 })
-const curosDefinitivoHTML = new Course({
+const cursoDefinitivoHTML = new Course({
     name: 'Curso Gratis de Programación Básica',
 
 })
-const curosPracticoHTML = new Course({
+const cursoPracticoHTML = new Course({
     name: 'Curso Gratis de Programación Básica',
 
 })

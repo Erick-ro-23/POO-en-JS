@@ -62,3 +62,30 @@ const miguelito = new Student2({
     //     "Principios de visualización de datos para BI",],
 });
 
+
+//Strict:
+function Student3(name, age, nationality) {
+    this._name = name;
+    this._age = age;
+    this._nationality = nationality;
+}
+
+Student3.prototype = {
+    get name() {
+        return this._name;
+    },
+    set name(newName) {
+        this._name = newName;
+    },
+    get age() {
+        return this._age;
+    },
+    set age(newAge) {
+        this.age = newAge;
+    }
+}
+
+let erick = new Student3("Erick", 32, "Ecuadorian");
+erick.name = "Daniel";
+erick.age = 27;
+console.log(erick); 

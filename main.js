@@ -88,4 +88,5 @@ Student3.prototype = {
 let erick = new Student3("Erick", 32, "Ecuadorian");
 erick.name = "Daniel";
 erick.age = 27;
-console.log(erick); 
+console.log(erick);
+

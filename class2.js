@@ -1,3 +1,21 @@
+class Comment {
+    constructor({ content,
+        studentName,
+        studentRole = "estudiantes", }) {
+        this.content = content;
+        this.studentName = studentName;
+        this.studentRole = studentRole,
+            this.likes = 0;
+    }
+
+    publicar() {
+        console.log(this.studentName + " (" + this.studentRole + ")");
+        console.log(this.likes + " likes");
+        console.log(this.content);
+    }
+}
+
+
 function videoPlay(id) {
     const urlSecreta = "https://platziultrasecretomasquelanasa.com/" + id;
     console.log("Se esta produciendo desde la url " + urlSecreta);
@@ -120,6 +138,14 @@ class Student {
         this.aprovedCourses = aprovedCourses;
         this.learningPaths = learningPaths;
     }
+
+    publicarComentario(comentContent) {
+        const comment = new Comment({
+            content: comentContent,
+            studentName: this.name,
+        });
+        comment.publicar();
+    }
 }
 
 class FreeStudent extends Student {
@@ -158,7 +184,32 @@ class ExpertStudent extends Student {
     }
 }
 
+class TeacherStudent extends Student {
+    constructor(props) {
+        super(props);
+    }
+    aprovedCourse(newCourse) {
+        this.approvedCourses.push(newCourse);
+    }
 
+    publicarComentario(comentContent) {
+        const comment = new Comment({
+            content: comentContent,
+            studentName: this.name,
+            studentRole: "profesor"
+        });
+        comment.publicar();
+    }
+}
+
+//Profesores:
+
+const Freddy = new TeacherStudent({
+    name: "Freddy Vega",
+    email: "fre123@mail.com",
+    username: "frediert",
+    twitter: "@frediert123",
+});
 
 //Extends pero con prototipos (lo mismo de arriba):
 // function FreeStudent({
